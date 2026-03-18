@@ -1,0 +1,17 @@
+* text=auto
+
+# Unity files
+*.cs diff=csharp
+
+# Treat these as binary (no merge conflicts)
+*.unity binary
+*.prefab binary
+*.fbx binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.wav binary
+*.mp3 binary
+*.mp4 binary
+*.anim binary
+*.controller binary
