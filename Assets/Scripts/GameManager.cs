@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
     public int totalCoins = 5;
     public TextMeshProUGUI scoreText;
 
+    public bool gameEnded = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -28,5 +30,18 @@ public class GameManager : MonoBehaviour
     void UpdateScoreUI()
     {
         scoreText.text = "Coins: " + score + " / " + totalCoins;
+    }
+
+    public bool HasAllCoins()
+    {
+        return score >= totalCoins;
+    }
+
+    public void WinGame()
+    {
+        if (gameEnded) return;
+
+        gameEnded = true;
+        Debug.Log("You Win");
     }
 }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Collectible : MonoBehaviour
+public class ExitDoor : MonoBehaviour
 {
     public GameManager gameManager;
 
@@ -8,8 +8,10 @@ public class Collectible : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            gameManager.AddScore();
-            Destroy(gameObject);
+            if (gameManager.HasAllCoins())
+            {
+                gameManager.WinGame();
+            }
         }
     }
 }
